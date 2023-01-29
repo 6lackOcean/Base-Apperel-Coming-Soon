@@ -1,0 +1,225 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  html, body {
+    min-height: 100vh;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+:root{
+    --crl-primary-300: hsl(0, 93%, 68%);
+    --crl-primary-500: hsl(0, 36%, 70%);
+
+    --clr-neutral-500: hsl(0, 6%, 24%);
+
+    --grad-300: 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+    --grad-500: 135deg, hsl(0, 0%, 100%), hsl(0, 90%, 95%);
+
+    --fs-400: 14px;    
+    --fs-500: 16px;
+    --fs-600: 1.2em;
+    --fs-800: 2.5em;
+    --fs-900: 3.5em;
+
+
+    --fs-base:var(--fs-400);
+    --fs-header:var(--fs-800);
+    --fs-base2:var(--fs-500);
+    --fs-header2:var(--fs-900);
+
+    --fw-light: 300;
+    --fw-semibold: 400;
+    --fw-bold: 600;
+
+    --space-200: 0.25rem;
+    --space-300: 0.5rem;
+    --space-400: 0.75rem;
+    --space-500: 1rem;
+    --space-600: 1.25rem;
+    --space-700: 1.5rem;
+    --space-800: 1.75rem;
+    --space-900: 2rem;
+
+}
+
+.font_base{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: var(--fs-base);
+    color:var(--crl-primary-500);
+    font-weight: var(--fw-light);
+}
+
+.background_gradient_300{
+    background-image: linear-gradient(var(--grad-300));
+}
+
+.background_gradient_500{
+    background-image: linear-gradient(var(--grad-500));
+}
+
+
+.email_box{
+    --email-box-height: 2.5rem;
+    --email-box-border-radius: 10rem;
+
+    border: solid 1px;
+    border-color: var(--crl-primary-500);
+    border-radius: var(--email-box-border-radius);
+    min-height: var(--email-box-height);
+}
+
+.conteiner{
+    margin-inline: var(--space-800);
+}
+
+
+
+
+
+.body{
+    width: auto;
+}
+
+.header_img{
+    padding-block: var(--space-900);
+    max-width: 7rem;
+}
+
+.main_img_mobile{
+    margin-bottom: var(--space-900);
+}
+
+.main_img_deskop{
+    position: absolute;
+    visibility: hidden;
+    z-index: -10;
+}
+
+.content{
+    text-align: center;
+}
+
+.content_header{
+    font-size: var(--fs-header);
+    margin-inline: auto;
+    max-width: min-content;
+    line-height: 1.1;
+    letter-spacing: 0.6rem;
+    margin-bottom: var(--space-500);
+}
+
+.accent{
+    color: var(--clr-neutral-500);
+    font-weight: var(--fw-semibold);
+}
+
+.content_text{
+    font-weight: var(--fw-semibold);
+    font-size: var(--fs-400);
+    line-height: 1.6;
+    margin-bottom: var(--space-900);
+}
+
+.inputbox{
+    position: relative;
+    min-height: var(--email-box-height);
+    margin-bottom: 5rem;
+}
+
+.box_text{
+    min-width: 100%;
+    background: none;
+}
+
+.box_button{
+    position: absolute;
+    min-width: 4rem;
+    left: 100%;
+    translate: -100% -100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_button a{
+    width:100%;
+}
+
+
+@media (min-width: 400px){
+    .body{
+        display: grid;
+        grid-template-columns: 55% 45%;
+        grid-template-rows: min-content 1fr;
+    }
+
+    .conteiner{
+        margin-left: 6rem;
+        margin-right: 1rem;
+        width: clamp(20ch, 35vw, 55ch);
+    }
+
+    .header_img{
+        padding-block: 4rem;
+        max-width: 9rem;
+    }
+
+    .main_img_mobile{
+        position: absolute;
+        visibility: hidden;
+        z-index: -10;
+    }
+    
+
+    .main_img_deskop{
+        display: block;
+        position: inherit;  /* Sprawdz co to znaczy */
+        visibility: visible;
+        z-index: auto;
+        grid-column: 2 / 3;
+        grid-row: 1 / span 2;
+    }
+
+    .section{
+        margin-top: 6rem;
+    }
+
+    .content{
+        text-align: left;
+    }
+    
+    .content_header{
+        font-size: var(--fs-header2);
+        margin-inline: 0px;
+    }
+    
+    .content_text{
+        font-size: var(--fs-base2);
+    }
+
+    .inputbox{
+        margin-bottom: 0px;
+    }
+
+}
