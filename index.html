@@ -31,12 +31,17 @@
       <p class="content_text font_base">Hello fellow shoppers! We're currently building our new fashion store.
         Add your email below to stay up-to-date with announcements and our launch deals.</p>
     </div>
-    <div class="inputbox">
-      <input class="box_text email_box" type="text" class="input" inputmode="email">
-      <button type="button" class="box_button  background_gradient_300 email_box">
-        <img src="/images/icon-arrow.svg" alt="">
-      </button>
-    </div>
+    <form class="inputbox">
+      <div class="main_scroll">
+        <input class="email_box box_text" type="email" inputmode="email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" maxlength="45" placeholder="Email Address">
+        <button id="submit_button" type="submit" value="" class="background_gradient_300  email_box box_button">
+          <img class="button_icon" src="/images/icon-arrow.svg" alt="button icon">
+        </button>
+        <img class="error" src="/images/icon-error.svg" alt="error">
+      </div>
+      <span class="error_text">Please provide a valid email</span>
+    </form>
     </div>
 </body>
 
